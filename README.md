@@ -19,9 +19,9 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 [![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][https://github.com/goldfrog0/concentrationCalculator-/branches]
+[![Forks][forks-shield]][(https://github.com/goldfrog0/concentrationCalculator-/branches)]
 <!--[![Stargazers][stars-shield]][stars-url] -->
-[![Issues][issues-shield][https://github.com/goldfrog0/concentrationCalculator-/issues]
+[![Issues][issues-shield]][(https://github.com/goldfrog0/concentrationCalculator-/issues)]
 [![GPL 2.0 License][license-shield]][(https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
