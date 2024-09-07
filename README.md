@@ -37,7 +37,7 @@
 <h3 align="center">project_title</h3>
 
   <p align="center">
-    project_description
+    Easy to use dilution calculator for emergency production of Povidone-Iodine solutions
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
