@@ -37,7 +37,7 @@
 <h3 align="center">project_title</h3>
 
   <p align="center">
-    Easy to use dilution calculator for emergency production of Povidone-Iodine solutions
+    User-friendly dilution calculator!
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
@@ -84,8 +84,17 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
+This project is intended to aid the calculation of measuments for diluting higher concentration solutions to more usable lower concentration dilutions. 
 
-This concentration calculator is intended to aid in diluting high percent concentration solutions to lower percentage dilutions. This project came about due to a frustration with currently available and accesible calculators relying on users having an amount of prior knowledge that could be prohiubitive. The goal is for this calculator to walk users through the calculation, and provide clarity on what is being calculated along the way. 
+This project came about due to a frustration with currently available and accesible calculators relying on users having an amount of prior knowledge that could be prohibitive. <------- rework line 90 
+
+Many dilution calculator websites hide too much of the process, and are may leave you wondering if you are really diluting enough, or too much, and dont teach users how to do this on their own. 
+
+The goal is for this calculator to walk users through the calculation, and provide clarity on what is being calculated along the way. 
+
+This calculator was inpsired by a recent issue in with accesibilty issues with medicated douches in the trans community. Many companies have discontinued medicated douches, and there is atleast one scarcity issue documented among one brand. Medicated douches, whose active ingredient is povidone-Iodine, have a very low 0.3% concentration. Some doctors have suggested diluting 10% iodine solutions, which are much stronger. Due to the sensitive application of these solutions, accuracy is paramount as many factors such as PH and avoiding sensitization are concerns. 
+
+While this is the inspiration for this project, this project does not provide medical advice. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
