@@ -85,7 +85,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+This concentration calculator is intended to aid in diluting high percent concentration solutions to lower percentage dilutions. This project came about due to a frustration with currently available and accesible calculators relying on users having an amount of prior knowledge that could be prohiubitive. The goal is for this calculator to walk users through the calculation, and provide clarity on what is being calculated along the way. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
