@@ -20,7 +20,7 @@
 -->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]]
-[https://github.com/goldfrog0/concentrationCalculator-/branches]
+[forks-url]
 <!--[![Stargazers][stars-shield]][stars-url] -->
 [![Issues][issues-shield]]
 [https://github.com/goldfrog0/concentrationCalculator-/issues]
