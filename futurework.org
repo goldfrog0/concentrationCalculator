@@ -1,0 +1,41 @@
+#+title: Future Work
+
+Hello! here are the open "Tickets or feature requests for the project"
+These are in order of priority.
+
+* TODO def getPositiveValue(message: string) -> float:
+** Description:
+- type signature would be str -> float
+- takes a string as input
+  - string is intended to be the prompt for the user
+- returns a user input that is a positive float
+  - only a positive value
+  - reprompts the user, letting them know the input must be a positive number.
+** Example:
+*** CODE: def getPositiveValue("what is the desired concentration as a percent?")
+*** OUTPUT:
+-> "what is the desired concentration as a percent?"
+-> *user inputs negative number*
+-> "Please input a positive number"
+-> *user inputs a positive number*
+-> function returns that number
+
+* TODO  def checkForYesorNo() -> bool :
+** Description:
+- type signature would be (none) -> bool
+- prompts user to type "yes" or "no"
+- accepts "y" or "yes" as a YES -> returning true
+- accepts "n" or "no" as a NO -> returning false
+- case insensitive
+
+* TODO create def convert_ml_oz()
+** Description:
+- takes a milliter value and converts it to ounces
+- type signature would be: float -> float
+  - need to reasearch replacement for floats as they are not great
+
+* TODO create def convert_oz_ml()
+** Description:
+- takes an ounces value and converts it to milliters
+  - type signature would be: float -> float
+  - need to reasearch replacement for floats as they are not great
