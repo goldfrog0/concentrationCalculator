@@ -28,13 +28,13 @@ These are in order of priority.
 - accepts "n" or "no" as a NO -> returning false
 - case insensitive
 
-* TODO create def convert_ml_oz()
+* DONE create def convert_ml_oz()
 ** Description:
 - takes a milliter value and converts it to ounces
 - type signature would be: float -> float
   - need to reasearch replacement for floats as they are not great
 
-* TODO create def convert_oz_ml()
+* DONE create def convert_oz_ml()
 ** Description:
 - takes an ounces value and converts it to milliters
   - type signature would be: float -> float
