@@ -33,6 +33,16 @@ def getNonZeroValue(uInput):
 
 
 def checkForYesorNo():
+    boolMessage = ('Yes or no?\n')
+    boolValid = ['y', 'yes', 'n', 'no']
+    boolInput = ""
+    while boolInput not in boolValid:
+        boolInput = input(boolMessage).lower()
+    if 'y' in boolInput:
+        boolInput = True
+    else:
+        boolInput = False
+    return boolInput
     pass
 
 
