@@ -84,17 +84,15 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
-This project is intended to aid the calculation of measuments for diluting higher concentration solutions to more usable lower concentration dilutions. 
+This project is intended to aid the calculation of dilution measurements to ensure user safety.
 
-This project came about due to a frustration with currently available and accesible calculators relying on users having an amount of prior knowledge that could be prohibitive. <------- rework line 90 
+This project came about due to a frustration with currently available calculators requiring a prohibitive amount of prior knowledge to use. Many dilution calculator websites hide much of the process and leave users uncertain of whether they have achieved safe results.
 
-Many dilution calculator websites hide much of the process, and may leave you wondering if you are really doing the process correctly, and dont teach users how to do this on their own. 
+The goal is for this calculator to walk users through these calculations and provide clarity on what is being calculated along the way.
 
-The goal is for this calculator to walk users through the calculation, and provide clarity on what is being calculated along the way. 
+This calculator was inspired by recent accessibility issues with medicated douches in the trans community. Many companies have discontinued medicated douches, and the companies that still offer them are frequently sold out. Medicated douches, whose active ingredient is povidone-Iodine, have a very low 0.3% concentration. Some doctors have suggested diluting 10% iodine solutions to replicate these douches, but a 10% solution is very strong. This is concerning, as the douching process is sensitive and misapplication could have adverse effects.
 
-This calculator was inpsired by a recent issue in with accesibilty issues with medicated douches in the trans community. Many companies have discontinued medicated douches, and there is atleast one scarcity issue documented among one brand. Medicated douches, whose active ingredient is povidone-Iodine, have a very low 0.3% concentration. Some doctors have suggested diluting 10% iodine solutions, which are much stronger. Due to the sensitive application of these solutions, accuracy is paramount as many factors such as PH and avoiding sensitization are concerns. 
-
-While this is the inspiration for this project is medical in nature, this project is not intended to provide medical advice. Consult a physician.
+While the inspiration for this project is medical in nature, this project is not intended to provide medical advice. Consult a physician.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
