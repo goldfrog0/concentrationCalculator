@@ -17,10 +17,32 @@ def convert_oz_ml(ounces: float) -> float:
 
 
 def getNonZeroValue(uInput):
+        while True:
+        try:
+            conc_pct = float(input('Please input your desired concentration percentage as a positive decimal '
+                                   '(ex. \'28.6\').\n'))
+            if conc_pct > 0:
+                return conc_pct
+            else:
+                print('Please try again. Input a positive number.')
+
+        except ValueError:
+            print('The value you entered could not be recognized as a percentage. '
+                  'Please use the same formatting as the example.')
     return 33
 
 
 def checkForYesorNo():
+    boolMessage = ('Yes or no?\n')
+    boolValid = ['y', 'yes', 'n', 'no']
+    boolInput = ""
+    while boolInput not in boolValid:
+        boolInput = input(boolMessage).lower()
+    if 'y' in boolInput:
+        boolInput = True
+    else:
+        boolInput = False
+    return boolInput
     pass
 
 
