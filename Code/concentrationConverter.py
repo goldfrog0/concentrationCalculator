@@ -1,12 +1,25 @@
 #!/usr/bin/env python3
+#from typing import Tuple
+
 
 DESIREDCONCENTRATION = 0.3  # this value is a percentage, decimal wise, it would be 0.003
 CHEMICALNAME = 'Povidone-Iodine'  #placeholder
 
+CONCENTRATEMessage = f'''
+                  Input the percent concentration of your {CHEMICALNAME}
+                  solution
+                  (for example, if it is listed as 10%, input just "10")
+                  : '''
+
+FINALConcentrationMessage = f'''
+                  Input the desired percent concentration of your {CHEMICALNAME}
+                  solution after dilution.
+                  (for example, if it is listed as 10%, input just "10")
+                  : '''
 
 def concentration_calc(cPVI: float, desired_volume : float) -> float:
+    #return ((DESIREDCONCENTRATION*desired_volume)/cPVI , mode)
     return (DESIREDCONCENTRATION*desired_volume)/cPVI
-
 
 def convert_ml_oz(milliters: float) -> float:
     return milliters/29.574
@@ -58,25 +71,56 @@ def get_ml_or_oz() -> str:
     reply = ""
     while reply not in valid_inputs:
         reply = input(greeting).lower()
-    return reply
+    if reply == '1':
+        return 'ml'
+    else:
+        return 'oz'
 
-def getConcentration() -> float:
-    concMessage = f'''
-                  Input the percent concentration of your {CHEMICALNAME}
-                  solution
-                  (for example, if it is listed as 10%, input just "10")
-                  : '''
+def getConcentration(concMessage:str) -> float:
     return getNonZeroValue(concMessage)
+
+def display_procedure(userConcentration, desiredCon, desiredVolume, unit) -> None:
+
+    displayMessage = f"""
+                  The program will now calculate the amount of {CHEMICALNAME} concentrate at {userConcentration}%,
+                  you need to add to your {desiredVolume} {unit} of water to acheive a {desiredCon}% concentration..."""
+    print(displayMessage)
+
+
+def runCalc():
+    unitMode = get_ml_or_oz()
+
+    while True:
+        #grab the concentrate concentration (store bought)
+         userConcentration = getConcentration(CONCENTRATEMessage)
+         print(f"The program will interpret this as a {userConcentration}% solution is this correct?")
+
+         if checkForYesorNo():
+             break
+         else:
+             print('Sorry! lets try again\n')
+             continue
+
+    while True:
+        #grab the desired final concentration
+         finalConcentration = getConcentration(FINALConcentrationMessage)
+         print(f"The program will interpret this as a {finalConcentration}% solution is this correct?")
+
+         if checkForYesorNo():
+             break
+         else:
+             print('Sorry! lets try again\n')
+             continue
+
+    userDesiredVolume = getNonZeroValue(f'input the amount of water you will be using in {unitMode}: ')
+
+    display_procedure(userConcentration, finalConcentration, userDesiredVolume, unitMode)
+
+    print(f"{concentration_calc(userConcentration, userDesiredVolume)} {unitMode}")
 
 
 def main():
-    get_ml_or_oz()
-    userConcentration = getConcentration()
-    print(f"The program will interpret this as a {userConcentration}% solution is this correct?")
-
-    userDesiredVolume = getNonZeroValue(f'input the amount of water you will be using in ml: ')
-    print(f'The program will now calculate the amount of {CHEMICALNAME} concentrate at {userConcentration}%, you need to add to your {userDesiredVolume} ml of water...')
-    print(f"{concentration_calc(userConcentration, userDesiredVolume)} ml")
+    runCalc()
 
 
 if __name__ == "__main__":
