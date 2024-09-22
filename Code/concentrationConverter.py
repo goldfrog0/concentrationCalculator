@@ -4,7 +4,7 @@ DESIREDCONCENTRATION = 0.3  # this value is a percentage, decimal wise, it would
 CHEMICALNAME = 'Povidone-Iodine'  #placeholder
 
 
-def concentration_calc(cPVI: int, desired_volume : int) -> float:
+def concentration_calc(cPVI: float, desired_volume : float) -> float:
     return (DESIREDCONCENTRATION*desired_volume)/cPVI
 
 
@@ -16,20 +16,19 @@ def convert_oz_ml(ounces: float) -> float:
     return 29.574*ounces
 
 
-def getNonZeroValue(uInput):
+def getNonZeroValue(message:str) -> float:
         while True:
-        try:
-            conc_pct = float(input('Please input your desired concentration percentage as a positive decimal '
-                                   '(ex. \'28.6\').\n'))
-            if conc_pct > 0:
-                return conc_pct
-            else:
-                print('Please try again. Input a positive number.')
+            try:
+                conc_pct = float(input(message))
+                if conc_pct > 0:
+                    return conc_pct
+                else:
+                    print('Please try again. Input a positive number.')
 
-        except ValueError:
-            print('The value you entered could not be recognized as a percentage. '
-                  'Please use the same formatting as the example.')
-    return 33
+            except ValueError:
+                print('The value you entered could not be recognized as a number. '
+                      'Please use the same formatting as the example.')
+
 
 
 def checkForYesorNo():
@@ -43,12 +42,12 @@ def checkForYesorNo():
     else:
         boolInput = False
     return boolInput
-    pass
 
 
 def get_ml_or_oz() -> str:
 
-    greeting = '''Hello!
+    greeting = '''
+                  Hello!
                   Will you be doing your calculations in fluid ounces or ml?
                   Please type your response and then hit enter.
                   Mililiters are recommended.
@@ -61,10 +60,12 @@ def get_ml_or_oz() -> str:
         reply = input(greeting).lower()
     return reply
 
-def getConcentration() -> int:
-    concMessage = f'''Input the percent concentration of your {CHEMICALNAME}
-                      solution
-                      (for example, if it is listed as 10%, input just "10") '''
+def getConcentration() -> float:
+    concMessage = f'''
+                  Input the percent concentration of your {CHEMICALNAME}
+                  solution
+                  (for example, if it is listed as 10%, input just "10")
+                  : '''
     return getNonZeroValue(concMessage)
 
 
@@ -73,9 +74,8 @@ def main():
     userConcentration = getConcentration()
     print(f"The program will interpret this as a {userConcentration}% solution is this correct?")
 
-    # if yes, continue, if no, loop above line of code
-    userDesiredVolume = int(input(f'input the amount of water you will be using in ml: '))
-    print(f'The program will now calculate the amount of {CHEMICALNAME} concentrate at {userConcentration}%, you need to add to your {userDesiredVolume} of water...')
+    userDesiredVolume = getNonZeroValue(f'input the amount of water you will be using in ml: ')
+    print(f'The program will now calculate the amount of {CHEMICALNAME} concentrate at {userConcentration}%, you need to add to your {userDesiredVolume} ml of water...')
     print(f"{concentration_calc(userConcentration, userDesiredVolume)} ml")
 
 

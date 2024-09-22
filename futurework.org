@@ -3,7 +3,7 @@
 Hello! here are the open "Tickets or feature requests for the project"
 These are in order of priority.
 
-* TODO def getPositiveValue(message: string) -> float:
+* DONE def getPositiveValue(message: string) -> float: COMPLETE
 ** Description:
 - type signature would be str -> float
 - takes a string as input
@@ -20,7 +20,8 @@ These are in order of priority.
 -> *user inputs a positive number*
 -> function returns that number
 
-* TODO  def checkForYesorNo() -> bool :
+* DONE def checkForYesorNo() -> bool : COMPLETE
+
 ** Description:
 - type signature would be (none) -> bool
 - prompts user to type "yes" or "no"
