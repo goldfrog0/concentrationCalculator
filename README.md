@@ -83,7 +83,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 This project is intended to aid the calculation of dilution measurements to ensure user safety.
 
 This project came about due to a frustration with currently available calculators requiring a prohibitive amount of prior knowledge to use. Many dilution calculator websites hide much of the process and leave users uncertain of whether they have achieved safe results.
@@ -100,7 +100,7 @@ While the inspiration for this project is medical in nature, this project is not
 
 ### Built With
 
-* [![Next][Next.js]][url]
+<!-- * [![Next][Next.js]][url] -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -113,7 +113,7 @@ This is an example of how you may give instructions on setting up your project l
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-
+NEED TO WRITE
 This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
@@ -128,7 +128,7 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
+NEED TO WRITE
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
@@ -140,10 +140,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [x] Minimum Viable Version (Python Script)
+- [ ] Web App
+- [ ] Walkthrough or Quick Calculation mode 
+- [ ] Quick conversion between oz and ml 
 
 See the [open issues](https://github.com/goldfrog0/concentrationCalculator-/issues) for a full list of proposed features (and known issues).
 
