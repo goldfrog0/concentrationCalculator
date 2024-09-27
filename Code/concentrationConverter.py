@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.10
 # from typing import Tuple
 
 
@@ -18,7 +18,7 @@ FINALConcentrationMessage = f'''
                   : '''
 
 
-def concentration_calc(cPVI: float, desired_volume: float, desiredConcentration: float) -> float:
+def concentration_calc(stockConcentration: float, desired_volume: float, desiredConcentration: float) -> float:
     """
     Calculate the final concentration of the solutions.
 
@@ -26,7 +26,7 @@ def concentration_calc(cPVI: float, desired_volume: float, desiredConcentration:
     based on a current
     """
     # return ((DESIREDCONCENTRATION*desired_volume)/cPVI , mode)
-    return (desiredConcentration*desired_volume)/cPVI
+    return (desiredConcentration*desired_volume)/stockConcentration
 
 
 def convert_ml_oz(milliters: float) -> float:
@@ -105,16 +105,31 @@ def get_ml_or_oz() -> str:
 
 
 def getConcentration(concMessage) -> float:
-    """Get a positive value to be used as an original concentration percentage."""
+
     CONCENTRATEMessage = f'''
                   Input the percent concentration of your {CHEMICALNAME}
                   solution
                   (for example, if it is listed as 10%, input just "10")
                   : '''
-    return getNonZeroValue(concMessage)
+
+    FINALConcentrationMessage = f'''
+                  Input the desired percent concentration of your {CHEMICALNAME}
+                  solution after dilution.
+                  (for example, if it is listed as 10%, input just "10")
+                  : '''
+
+    match concMessage:
+        case "ogConcentrate":
+            return getNonZeroValue(CONCENTRATEMessage)
+
+        case "finalConcentration":
+            return getNonZeroValue(FINALConcentrationMessage)
+
+        case _:
+            print("Error, getConcentration() received an unintended value.")
 
 
-def display_procedure(userConcentration, desiredCon, desiredVolume, unit) -> None:
+def display_procedure(userConcentration, desiredCon, desiredVolume, unit):
     """Print procedure for user to follow based on their parameters.
 
     """
@@ -129,7 +144,7 @@ def runCalc():
 
     while True:
         # grab the concentrate concentration (store bought)
-        userConcentration = getConcentration(CONCENTRATEMessage)
+        userConcentration = getConcentration("ogConcentrate")
         print(f"The program will interpret this as a {userConcentration}% solution is this correct?")
 
         if checkForYesorNo():
@@ -140,7 +155,7 @@ def runCalc():
 
     while True:
         # grab the desired final concentration
-        finalConcentration = getConcentration(FINALConcentrationMessage)
+        finalConcentration = getConcentration("finalConcentration")
         print(f"The program will interpret this as a {finalConcentration}% solution, is this correct?")
 
         if checkForYesorNo():

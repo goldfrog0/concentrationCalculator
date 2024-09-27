@@ -3,6 +3,10 @@
 Hello! here are the open "Tickets or feature requests for the project"
 These are in order of priority.
 
+* TODO Catching edge cases
+- [ ] User wants a concentration higher than they have
+- [ ] User wants identical concentration to what they have
+
 * DONE def getPositiveValue(message: string) -> float: COMPLETE
 ** Description:
 - type signature would be str -> float
