@@ -13,7 +13,7 @@ def concentration_calc(stockConcentration: float, desired_volume: float, desired
     This function calculates the final concentration of a solution
     based on a current
     """
-    # return ((DESIREDCONCENTRATION*desired_volume)/cPVI , mode)
+
     return (desiredConcentration*desired_volume)/stockConcentration
 
 
@@ -136,7 +136,7 @@ def runCalc():
     unitMode = get_ml_or_oz()
 
     while True:
-        # grab the concentrate concentration (store bought)
+        # grab the stock concentration (store bought)
         userConcentration = getConcentration("ogConcentrate")
         print(f"The program will interpret this as a {userConcentration}% solution is this correct?")
 
