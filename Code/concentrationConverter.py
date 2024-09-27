@@ -5,18 +5,6 @@
 DESIREDCONCENTRATION = 0.3  # this value is a percentage, decimal wise, it would be 0.003
 CHEMICALNAME = 'Povidone-Iodine'  # placeholder
 
-CONCENTRATEMessage = f'''
-                  Input the percent concentration of your {CHEMICALNAME}
-                  solution
-                  (for example, if it is listed as 10%, input just "10")
-                  : '''
-
-FINALConcentrationMessage = f'''
-                  Input the desired percent concentration of your {CHEMICALNAME}
-                  solution after dilution.
-                  (for example, if it is listed as 10%, input just "10")
-                  : '''
-
 
 def concentration_calc(stockConcentration: float, desired_volume: float, desiredConcentration: float) -> float:
     """
@@ -104,8 +92,13 @@ def get_ml_or_oz() -> str:
         return 'oz'
 
 
-def getConcentration(concMessage) -> float:
+def getConcentration(concMessage):
+    """
+    Determine the concentration of stock solution or final solution.
 
+    input "ogConcentrate" for stock conc message
+    input "finalConcentration" for final conc message
+    """
     CONCENTRATEMessage = f'''
                   Input the percent concentration of your {CHEMICALNAME}
                   solution
@@ -129,12 +122,12 @@ def getConcentration(concMessage) -> float:
             print("Error, getConcentration() received an unintended value.")
 
 
-def display_procedure(userConcentration, desiredCon, desiredVolume, unit):
+def display_procedure(stockConcentration, desiredCon, desiredVolume, unit):
     """Print procedure for user to follow based on their parameters.
 
     """
     displayMessage = f"""
-                  The program will now calculate the amount of {CHEMICALNAME} concentrate at {userConcentration}%,
+                  The program will now calculate the amount of {CHEMICALNAME} concentrate at {stockConcentration}%,
                   you need to add to your {desiredVolume} {unit} of water to acheive a {desiredCon}% concentration..."""
     print(displayMessage)
 
@@ -172,6 +165,7 @@ def runCalc():
 
 
 def main():
+    print("Welcome to the concentration calculator!!!")
     runCalc()
 
 
