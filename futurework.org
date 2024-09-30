@@ -6,7 +6,8 @@ These are in order of priority.
 * TODO Catching edge cases
 - [ ] User wants a concentration higher than they have
 - [ ] User wants identical concentration to what they have
-* TODO add ml and oz to final output
+
+* DONE add ml and oz to final output
 
 * DONE def getPositiveValue(message: string) -> float: COMPLETE
 ** Description:

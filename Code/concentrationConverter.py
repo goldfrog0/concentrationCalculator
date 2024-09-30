@@ -110,16 +110,26 @@ def getConcentration(concMessage):
                   solution after dilution.
                   (for example, if it is listed as 10%, input just "10")
                   : '''
+    while True:
 
-    match concMessage:
-        case "ogConcentrate":
-            return getNonZeroValue(CONCENTRATEMessage)
+        match concMessage:
+            case "ogConcentrate":
+                concentrate = getNonZeroValue(CONCENTRATEMessage)
 
-        case "finalConcentration":
-            return getNonZeroValue(FINALConcentrationMessage)
+            case "finalConcentration":
+                concentrate = getNonZeroValue(FINALConcentrationMessage)
 
-        case _:
-            print("Error, getConcentration() received an unintended value.")
+            case _:
+                print("Error, getConcentration() received an unintended value.")
+
+        print(f'The program will interpret this as a {concentrate}% solution, is this correct?')
+
+        if checkForYesorNo():
+            break
+        else:
+            print("Sorry! Let's try again\n")
+
+    return concentrate
 
 
 def display_procedure(stockConcentration, desiredCon, desiredVolume, unit):
@@ -136,43 +146,35 @@ def runCalc():
     """
     unitMode = get_ml_or_oz()
 
-    if unitMode == "ml":
-        otherMode = "oz"
-    else:
-        otherMode = "ml"
+    # grab the stock concentration (store bought)
+    userConcentration = getConcentration("ogConcentrate")
 
-    while True:
-        # grab the stock concentration (store bought)
-        userConcentration = getConcentration("ogConcentrate")
-        print(f"The program will interpret this as a {userConcentration}% solution is this correct?")
+    # grab the desired final concentration
+    finalConcentration = getConcentration("finalConcentration")
 
-        if checkForYesorNo():
-            break
-        else:
-            print('Sorry! lets try again\n')
-            continue
-
-    while True:
-        # grab the desired final concentration
-        finalConcentration = getConcentration("finalConcentration")
-        print(f"The program will interpret this as a {finalConcentration}% solution, is this correct?")
-
-        if checkForYesorNo():
-            break
-        else:
-            print('Sorry! lets try again\n')
-            continue
-
+    # grab the amount of solvent
     userDesiredVolume = getNonZeroValue(f'input the amount of water you will be using in {unitMode}: ')
 
+    # print final amount
     display_procedure(userConcentration, finalConcentration, userDesiredVolume, unitMode)
 
     additiveAmount = concentration_calc(userConcentration, userDesiredVolume, finalConcentration)
 
-    print(f"""
-    {additiveAmount} {unitMode}
-    or, you can add
-    """)
+    match unitMode:
+        case "ml":
+            print(f"""
+                {additiveAmount} {unitMode}
+                or, you can add
+                {convert_ml_oz(additiveAmount)} oz""")
+
+        case "oz":
+            print(f"""
+                {additiveAmount} {unitMode}
+                or, you can add
+                {convert_oz_ml(additiveAmount)} ml""")
+
+        case _:
+            print("unit mode not determined")
 
 
 def main():
