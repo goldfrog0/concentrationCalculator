@@ -131,7 +131,6 @@ def getConcentration(concMessage) -> float:
 
 def display_procedure(userConcentration, desiredCon, desiredVolume, unit):
     """Print procedure for user to follow based on their parameters.
-
     """
     displayMessage = f"""
                   The program will now calculate the amount of {CHEMICALNAME} concentrate at {userConcentration}%,
@@ -140,7 +139,14 @@ def display_procedure(userConcentration, desiredCon, desiredVolume, unit):
 
 
 def runCalc():
+    """Runs the full calulation of one stock solution to desired solution.
+    """
     unitMode = get_ml_or_oz()
+
+    if unitMode == "ml":
+        otherMode = "oz"
+    else:
+        otherMode = "ml"
 
     while True:
         # grab the concentrate concentration (store bought)
@@ -168,7 +174,12 @@ def runCalc():
 
     display_procedure(userConcentration, finalConcentration, userDesiredVolume, unitMode)
 
-    print(f"{concentration_calc(userConcentration, userDesiredVolume, finalConcentration)} {unitMode}")
+    additiveAmount = concentration_calc(userConcentration, userDesiredVolume, finalConcentration)
+
+    print(f"""
+    {additiveAmount} {unitMode}
+    or, you can add
+    """)
 
 
 def main():
