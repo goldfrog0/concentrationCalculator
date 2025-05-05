@@ -132,7 +132,7 @@ def getConcentration(concMessage):
     return concentrate
 
 
-def display_procedure(stockConcentration, desiredCon, desiredVolume, unit):
+def display_procedure(stockConcentration, desiredCon, desiredVolume, unit) -> None:
     """Print procedure for user to follow based on their parameters.
     """
     displayMessage = f"""
